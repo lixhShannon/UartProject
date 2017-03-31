@@ -15,7 +15,6 @@
 extern void sendData(unsigned char* buf, unsigned char CANID);
 extern void uart_send(unsigned char* buf);
 extern void UART0Read(unsigned char UART0ReadData);
-bool Flag_uart_read = true;
 
 VOID CALLBACK myTimerProc1(
 	HWND hwnd, // handle of window for timer messages

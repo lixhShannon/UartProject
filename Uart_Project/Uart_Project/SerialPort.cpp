@@ -19,7 +19,6 @@
 #include <windows.h>
 
 extern void UART0Read(unsigned char UART0ReadData);
-extern bool Flag_uart_read;
 
 UINT Count_recv = 0;
 UINT Count_a = 0;
