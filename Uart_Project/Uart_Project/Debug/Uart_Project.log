@@ -1,0 +1,4 @@
+﻿  Uart_Project.cpp
+d:\git\git test for vs\uart_project\uart_project\serialport.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  Uart_Project.vcxproj -> D:\git\git test for vs\Uart_Project\Debug\Uart_Project.exe
+  Uart_Project.vcxproj -> D:\git\git test for vs\Uart_Project\Debug\Uart_Project.pdb (Full PDB)
