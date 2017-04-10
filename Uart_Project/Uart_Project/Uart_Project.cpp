@@ -12,9 +12,16 @@
 #include <iostream> 
 #include "SerialPort.h"
 
-extern void sendData(unsigned char* buf, unsigned char CANID);
+extern void sendDataPack(unsigned char* buf);
 extern void uart_send(unsigned char* buf);
 extern void UART0Read(unsigned char UART0ReadData);
+
+extern unsigned char Uart_Recv_Buf[10];
+extern unsigned char Uart_Send_Buf[10];
+extern bool Flag_Uart_PassWord_Send;
+extern unsigned char RecvBuf[8];
+extern unsigned char SendBuf[8];
+
 
 VOID CALLBACK myTimerProc1(
 	HWND hwnd, // handle of window for timer messages
@@ -26,15 +33,12 @@ VOID CALLBACK myTimerProc1(
 	//printf("In myTimerProc1\n");
 	
 }
-unsigned char SendBuf[10];
-//unsigned char buf[10] = {0xBB,0x11,0x22,0x33,0x44,0x55,0x66,0x77,0x88,0x22 };
+
 int main()
 {
 	MSG msg;
 	CSerialPort mySerialPort;
 	bool Flag_Uart_Swtich=true;
-	SendBuf[0] = 0xAA;
-	SendBuf[2] = 0x56;
 	SetTimer(NULL, 0, 50, myTimerProc1);
 	if (!mySerialPort.InitPort(2,57600))
 	{
@@ -68,8 +72,25 @@ int main()
 			if (Flag_Uart_Swtich)
 			{
 				Flag_Uart_Swtich = false;
-				uart_send(SendBuf);
-				mySerialPort.WriteData(SendBuf, 10);
+				if (Flag_Uart_PassWord_Send)
+				{
+					Flag_Uart_PassWord_Send = false;
+					for (int i = 0; i < 8; i++)
+					{
+						Uart_Send_Buf[i + 1] = SendBuf[i];
+					}
+					sendDataPack(Uart_Send_Buf);
+					mySerialPort.WriteData(Uart_Send_Buf, 10);
+
+				}
+				else
+				{
+					Uart_Send_Buf[2] = 0x56;
+					uart_send(Uart_Send_Buf);
+					mySerialPort.WriteData(Uart_Send_Buf, 10);
+				}
+				
+				//mySerialPort.WriteData(Uart_Send_Buf, 10);
 			}
 			else
 			{

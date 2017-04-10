@@ -30,6 +30,9 @@
     <ClInclude Include="uart_send.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CRC_8.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -42,6 +45,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="uart_send.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CRC_8.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
