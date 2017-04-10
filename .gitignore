@@ -10,6 +10,10 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+#Shannon setting
+*.VC.db
+*.suo
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
