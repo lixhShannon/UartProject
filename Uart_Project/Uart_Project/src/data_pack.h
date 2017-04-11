@@ -76,7 +76,45 @@ typedef enum
     SHAKE_HAND=0x56
 }WORK_MODE;
 
+typedef enum
+{
+   LEFT=0x1,//左转
+   RIGHT, //右转
+   ROUND, //转圈
+   COMEON, //过来
+   LTURN,  //再转一点
+   JINGLI, //敬礼
+   MAIMENG, //卖萌
+   SHAKEH, //握手
+   FEIWEN, //飞吻
+}VOICE_SUBCMD
 
+typedef enum
+{
+	ACTION_ACCEPT=0x01,
+	ACTION_REFUSE=0x02
+}CAN_RESP;
+
+typedef enum
+{
+	NAVIGATION_ONGOING=0x01,
+	NAVIGATION_SUCCEED,
+	NAVIGATION_FAIL,
+}NAVIGATION_STATUS;
+
+/*
+第一类：
+可以了：{"from":"voice","cmd":IDLE,"subcmd":} //发给canserver
+        {"from":"can","cmd":IDLE,"subcmd":,"resp":ACTION_ACCEPT} //发给UI和voice
+
+第二类：
+语音指令：{"from":"voice","cmd":VOICE_CMD,"subcmd":LEFT} //发给canserver
+		  {"from":"can","cmd":VOICE_CMD,"subcmd":LEFT,"resp":ACTION_ACCEPT} //发给voice
+第三类：
+导航： {"from":"voice","cmd":NAVIGATION,"subcmd":<goalid>} //语音控制开始导航，发给canserver
+       {"from":"can","cmd":NAVIGATION,"subcmd":<goalid>,"resp":ACTION_ACCEPT} //可以导航 或者比可以导航，发给voice
+	   {"from":"can","cmd":NAVIGATION,"subcmd":<goalid>,"resp":NAVIGATION_ONGOING} //报告正在导航状态，成功或者导航失败；发给voice
+*/
 #define SOFTWAER_VERSION 0001
 #define HARDWAER_VERSION 01
 

@@ -33,6 +33,9 @@
     <ClInclude Include="CRC_8.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="data_pack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

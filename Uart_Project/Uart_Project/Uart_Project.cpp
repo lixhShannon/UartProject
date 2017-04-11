@@ -94,43 +94,10 @@ int main()
 			}
 			else
 			{
-				//UINT BytesInQue = mySerialPort.GetBytesInCOM();
-				//if (BytesInQue > 0)
-				//{
-				//	do
-				//	{
-				//		char cRecved = 0x00;
-				//		if (mySerialPort.ReadChar(cRecved) == true)
-				//		{
-				//			//std::cout << cRecved;  
-				//			UART0Read(cRecved);
-				//			continue;
-				//		}
-				//	} while (--BytesInQue);
-				//}
 				Flag_Uart_Swtich = true;
 			}
-			//std::cout << "i send the  message " << count++ << std::endl;
-			/*uart_send(SendBuf);
-			mySerialPort.WriteData(SendBuf, 10);*/
-			//UINT BytesInQue = mySerialPort.GetBytesInCOM();
-			//if (BytesInQue > 0)
-			//{
-			//	do
-			//	{
-			//		char cRecved = 0x00;
-			//		if (mySerialPort.ReadChar(cRecved) == true)
-			//		{
-			//			//std::cout << cRecved;  
-			//			UART0Read(cRecved);
-			//			continue;
-			//		}
-			//	} while (--BytesInQue);
-			//}
-			//std::cout  <<  "i   got   the   message "   <<   std::endl;
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
-			//break;
 		}
 	}
 	system("pause");

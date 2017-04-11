@@ -1,10 +1,11 @@
 ﻿  uart_send.cpp
 uart_send.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
 d:\git\uartproject\uart_project\uart_project\SerialPort.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\git\uartproject\uart_project\uart_project\data_pack.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
   正在生成代码
-  2 of 35 functions ( 5.7%) were compiled, the rest were copied from previous compilation.
+  5 of 36 functions (13.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   Uart_Project.vcxproj -> D:\git\UartProject\Uart_Project\Release\Uart_Project.exe
   Uart_Project.vcxproj -> D:\git\UartProject\Uart_Project\Release\Uart_Project.pdb (Full PDB)
